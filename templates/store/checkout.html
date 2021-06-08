@@ -13,7 +13,7 @@
 <div class="card">
 <div class="card-body">
   <h4 style="card-title mb-4">Billing Address</h4>
-  <form class="" action="index.html" method="post">
+  <form class="" action="{% url 'place_order' %}" method="POST">
     {% csrf_token %}
     <div class="form-row">
       <div class="col form-group">
@@ -94,7 +94,9 @@
                   {{ item.variation_category | capfirst }} : {{ item.variation_value | capfirst }} <br>
                 {% endfor %}
                 {% endif %}
+								</p>
       			</figcaption>
+
       		</figure>
       	</td>
         <td>
